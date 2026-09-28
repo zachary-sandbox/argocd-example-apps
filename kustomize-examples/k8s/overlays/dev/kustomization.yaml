@@ -9,7 +9,7 @@ namespace: dev
 
 # dev replicas 1
 replicas:
-  - name: nginx
+  - name: guestbook-ui
     count: 1
 
 images:
