@@ -11,7 +11,7 @@ spec:
     path: kustomize-examples/k8s/overlays/prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: nginx-prod
+    namespace: prod
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
