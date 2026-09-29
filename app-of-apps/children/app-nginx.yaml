@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: child-nginx
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/zachary-sandbox/argocd-example-apps.git
+    targetRevision: release/v1.0.0
+    path: kustomize-examples/k8s/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nginx-prod
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
