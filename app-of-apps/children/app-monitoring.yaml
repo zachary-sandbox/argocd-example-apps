@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/zachary-sandbox/argocd-example-apps.git
     targetRevision: HEAD
-    path: monitoring
+    path: guestbook
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
